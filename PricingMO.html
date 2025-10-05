@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17580740260"></script> -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'AW-17580740260');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JAYISAAC AI Maintenance & Optimization Pricing</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        body {
+            background: #ffffff;
+            color: #000000;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+            position: relative;
+            padding-bottom: 200px;
+            padding-top: 120px;
+            font-weight: 400;
+        }
+        #particles-js {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+            background: transparent;
+            pointer-events: none;
+            overflow: hidden;
+        }
+        #particles-js canvas {
+            display: block;
+            width: 100% !important;
+            height: 100% !important;
+        }
+        header {
+            background: #ffffff;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .logo img {
+            height: 36px;
+            transition: transform 0.3s ease;
+        }
+        .logo img:hover {
+            transform: scale(1.1);
+        }
+        .logo span {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #000000;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            list-style: none;
+        }
+        .nav-links a {
+            color: #000000;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        .nav-links a:hover {
+            color: #4b5563;
+        }
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            background: none;
+            border: none;
+            color: #000000;
+            cursor: pointer;
+        }
+        .content-section {
+            max-width: 1200px;
+            margin: 0 auto 4rem;
+            background: #ffffff;
+            padding: 3rem;
+            border-radius: 12px;
+            position: relative;
+            z-index: 2;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+        .hero-section {
+            padding: 6rem 2rem;
+            text-align: center;
+            z-index: 2;
+        }
+        .hero-section h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #000000;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .hero-section p {
+            font-size: 1.125rem;
+            color: #4b5563;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .pricing-section {
+            padding: 4rem 2rem;
+            text-align: center;
+            z-index: 2;
+        }
+        .pricing-section h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #000000;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .pricing-card {
+            background: #ffffff;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            color: #000000;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(50px);
+        }
+        .pricing-card.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .pricing-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+        .pricing-card h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        .pricing-card .price {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #000000;
+            margin-bottom: 1rem;
+        }
+        .pricing-card ul {
+            list-style: none;
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+            color: #4b5563;
+        }
+        .pricing-card ul li {
+            margin-bottom: 0.5rem;
+        }
+        .pricing-card a {
+            display: inline-block;
+            background: #000000;
+            color: #ffffff;
+            padding: 0.8rem 1.5rem;
+            border-radius: 9999px;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        .pricing-card a:hover {
+            background: #4b5563;
+            transform: translateY(-2px);
+        }
+        .features-section {
+            padding: 4rem 2rem;
+            text-align: center;
+            z-index: 2;
+        }
+        .features-section h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #000000;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .feature-card {
+            background: #ffffff;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        .feature-card p {
+            font-size: 1rem;
+            color: #4b5563;
+        }
+        .benefits-section {
+            padding: 4rem 2rem;
+            text-align: center;
+            z-index: 2;
+        }
+        .benefits-section h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #000000;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .benefits-list {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: left;
+        }
+        .benefits-list ul {
+            list-style: none;
+            font-size: 1.125rem;
+            color: #4b5563;
+        }
+        .benefits-list ul li {
+            margin-bottom: 1rem;
+        }
+        .contact-section {
+            padding: 4rem 2rem;
+            text-align: center;
+            z-index: 2;
+        }
+        .contact-section h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #000000;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .contact-info {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .contact-info p {
+            font-size: 1.125rem;
+            color: #4b5563;
+            margin-bottom: 1rem;
+        }
+        .contact-info a {
+            color: #000000;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .contact-info a:hover {
+            color: #4b5563;
+        }
+        footer {
+            padding: 3rem 2rem;
+            text-align: left;
+            position: relative;
+            z-index: 800;
+            border-top: 1px solid #e5e7eb;
+            background: #f9fafb;
+        }
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 2rem;
+            background: #ffffff;
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+        .footer-company {
+            flex: 1;
+        }
+        .footer-company .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        .footer-company .footer-logo img {
+            height: 36px;
+            transition: transform 0.3s ease;
+        }
+        .footer-company .footer-logo img:hover {
+            transform: scale(1.1);
+        }
+        .footer-company .footer-logo span {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #000000;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .footer-company p {
+            font-size: 0.875rem;
+            color: #4b5563;
+            max-width: 250px;
+        }
+        .footer-terms {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        .footer-terms a {
+            color: #000000;
+            text-decoration: none;
+            font-size: 0.875rem;
+            transition: color 0.3s ease;
+        }
+        .footer-terms a:hover {
+            color: #4b5563;
+        }
+        .purchase-button {
+            position: fixed;
+            bottom: 60px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #000000;
+            color: #ffffff;
+            padding: 1rem 3rem;
+            border-radius: 9999px;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+        .purchase-button:hover {
+            background: #4b5563;
+            transform: translateX(-50%) translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+        }
+        @media (max-width: 768px) {
+            body {
+                padding-top: 100px;
+            }
+            header {
+                padding: 1rem;
+            }
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                gap: 1rem;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: #ffffff;
+                padding: 1rem;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
+            .nav-links.active {
+                display: flex;
+            }
+            .menu-toggle {
+                display: block;
+            }
+            .hero-section {
+                padding: 4rem 1rem;
+            }
+            .hero-section h2 {
+                font-size: 2rem;
+            }
+            .hero-section p {
+                font-size: 1rem;
+            }
+            .pricing-section {
+                padding: 2rem 1rem;
+            }
+            .pricing-section h2 {
+                font-size: 2rem;
+            }
+            .pricing-grid {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto;
+            }
+            .pricing-card {
+                padding: 1.5rem;
+            }
+            .pricing-card h3 {
+                font-size: 1.3rem;
+            }
+            .pricing-card .price {
+                font-size: 1.8rem;
+            }
+            .pricing-card ul {
+                font-size: 0.9rem;
+            }
+            .pricing-card a {
+                padding: 0.6rem 1.2rem;
+                font-size: 0.9rem;
+            }
+            .features-section {
+                padding: 2rem 1rem;
+            }
+            .features-section h2 {
+                font-size: 2rem;
+            }
+            .feature-card {
+                padding: 1.5rem;
+            }
+            .feature-card h3 {
+                font-size: 1.3rem;
+            }
+            .feature-card p {
+                font-size: 0.9rem;
+            }
+            .benefits-section {
+                padding: 2rem 1rem;
+            }
+            .benefits-section h2 {
+                font-size: 2rem;
+            }
+            .benefits-list ul {
+                font-size: 1rem;
+            }
+            .contact-section {
+                padding: 2rem 1rem;
+            }
+            .contact-section h2 {
+                font-size: 2rem;
+            }
+            .contact-info p {
+                font-size: 1rem;
+            }
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+                padding: 2rem;
+            }
+            .footer-company, .footer-terms {
+                text-align: center;
+            }
+            .footer-terms {
+                margin-top: 1rem;
+            }
+            .content-section {
+                padding: 2rem;
+                margin-bottom: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="particles-js"></div>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="images/chtabot lololol.jpg" alt="JAYISAAC AI Logo">
+                <span>JAYISAAC AI</span>
+            </div>
+            <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+            <ul class="nav-links">
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/pricing.html">Pricing</a></li>
+                <li><a href="/Demo.html">Demo</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="hero-section" id="hero">
+        <div class="content-section">
+            <h2>JAYISAAC AI Maintenance & Optimization Pricing</h2>
+            <p>Discover the perfect AI maintenance and optimization plan to keep your AI solutions performant, secure, and cost-effective.</p>
+        </div>
+    </section>
+    <section class="pricing-section" id="pricing">
+        <div class="content-section">
+            <h2>Pricing That Delivers ROI!</h2>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>Basic</h3>
+                    <div class="price">$499/month or $5,090/year (15% off)</div>
+                    <ul>
+                        <li>Monthly performance monitoring</li>
+                        <li>Basic security patches</li>
+                        <li>Quarterly usage reports</li>
+                        <li>Email support (up to 5 tickets/month)</li>
+                    </ul>
+                    <a href="/Purchasepage.html">Get Started 🚀</a>
+                </div>
+                <div class="pricing-card">
+                    <h3>Pro</h3>
+                    <div class="price">$999/month or $10,190/year (15% off)</div>
+                    <ul>
+                        <li>Everything in Basic</li>
+                        <li>Bi-monthly model fine-tuning</li>
+                        <li>Cloud cost optimization (1 session/quarter)</li>
+                        <li>Priority support (unlimited email + 2 calls/month)</li>
+                        <li>Custom improvement recommendations</li>
+                    </ul>
+                    <a href="/Purchasepage.html">Level Up 💥</a>
+                </div>
+                <div class="pricing-card">
+                    <h3>Enterprise</h3>
+                    <div class="price">$1,999/month or $20,390/year (15% off)</div>
+                    <ul>
+                        <li>Everything in Pro</li>
+                        <li>Weekly monitoring & real-time alerts</li>
+                        <li>Full retraining (up to 4x/year)</li>
+                        <li>Dedicated troubleshooting + infrastructure audit</li>
+                        <li>ROI blueprint updates</li>
+                    </ul>
+                    <a href="/Purchasepage.html">Go Premium 📞</a>
+                </div>
+            </div>
+            <p>Need a custom solution? <a href="/contact.html">Contact us</a> for bespoke maintenance packages or one-time optimization projects.</p>
+        </div>
+    </section>
+    <section class="features-section" id="features">
+        <div class="content-section">
+            <h2>Key Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3>Continuous Monitoring</h3>
+                    <p>Ensure your AI models stay performant with real-time tracking.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Proactive Support</h3>
+                    <p>Fast, expert troubleshooting to keep your systems running smoothly.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Cost Optimization</h3>
+                    <p>Reduce cloud expenses with tailored infrastructure audits.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="benefits-section" id="benefits">
+        <div class="content-section">
+            <h2>Benefits of JAYISAAC AI Maintenance</h2>
+            <div class="benefits-list">
+                <ul>
+                    <li>Up to 40% reduction in AI downtime</li>
+                    <li>20% savings on cloud infrastructure costs</li>
+                    <li>Enhanced security with regular patches</li>
+                    <li>Improved ROI with data-driven optimizations</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section class="contact-section" id="contact">
+        <div class="content-section">
+            <h2>Get in Touch</h2>
+            <div class="contact-info">
+                <p>Ready to optimize your AI? Contact us at <a href="mailto:admin@jayisaacai.com">admin@jayisaacai.com</a></p>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-company">
+                <div class="footer-logo">
+                    <img src="images/chtabot lololol.jpg" alt="JAYISAAC AI Logo">
+                    <span>JAYISAAC AI AUTOMATION</span>
+                </div>
+                <p>Revolutionizing automation with AI chatbots tailored to your needs. Contact us at <a href="mailto:admin@jayisaacai.com">admin@jayisaacai.com</a></p>
+            </div>
+            <div class="footer-terms">
+                <a href="/TOS_SUCH.html">Terms of Service</a>
+                <a href="/TOS_SUCH.html">Privacy Policy</a>
+                <a href="/TOS_SUCH.html">Cookie Policy</a>
+            </div>
+        </div>
+    </footer>
+    <a href="/Purchasepage.html" class="purchase-button">Purchase AI Maintenance Plans</a>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="https://cdn.botpress.cloud/webchat/v3.3/inject.js"></script>
+    <script src="https://files.bpcontent.cloud/2025/09/18/19/20250918193740-EZH2L63I.js" defer></script>
+    <script>
+        particlesJS('particles-js', {
+            particles: {
+                number: { value: 80, density: { enable: true, value_area: 1000 } },
+                color: { value: '#000000' },
+                shape: { type: 'triangle', stroke: { width: 0, color: '#000000' } },
+                opacity: { value: 0.5, random: true, anim: { enable: true, speed: 1, opacity_min: 0.1, sync: false } },
+                size: { value: 3, random: true },
+                line_linked: { enable: true, distance: 150, color: '#000000', opacity: 0.3, width: 1 },
+                move: { enable: true, speed: 2, direction: 'none', random: true, straight: false, out_mode: 'bounce', bounce: true }
+            },
+            interactivity: {
+                detect_on: 'canvas',
+                events: { onhover: { enable: true, mode: 'repulse' }, onclick: { enable: true, mode: 'push' }, resize: true },
+                modes: { repulse: { distance: 100 }, push: { particles_nb: 4 } }
+            },
+            retina_detect: true
+        });
+        function resizeCanvas() {
+            const canvas = document.querySelector('#particles-js canvas');
+            if (canvas) {
+                canvas.style.width = '100vw';
+                canvas.style.height = '100vh';
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            }
+        }
+        window.addEventListener('resize', resizeCanvas);
+        window.addEventListener('load', resizeCanvas);
+        console.log('Particles.js initialized');
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+        const sections = document.querySelectorAll('section');
+        const sectionObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.2 });
+        sections.forEach(section => {
+            section.style.opacity = 0;
+            section.style.transform = 'translateY(50px)';
+            section.style.transition = 'all 0.8s ease-out';
+            sectionObserver.observe(section);
+        });
+        const pricingCards = document.querySelectorAll('.pricing-card');
+        const pricingObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.classList.add('show');
+                    }, index * 200);
+                }
+            });
+        }, { threshold: 0.2 });
+        pricingCards.forEach(card => {
+            pricingObserver.observe(card);
+        });
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
